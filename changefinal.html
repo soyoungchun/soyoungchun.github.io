@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.tab {
+  float: center;
+  border: 3px solid #fff18a;
+  width: auto;
+  height: auto;
+  margin-top: 10%;
+}
+.tab button {
+  display: block;
+  color: black;
+  font-family: serif;
+  padding: 20px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  font-size: 25px;
+  font-family: "Arial Black", sans-serif;
+
+}
+.tab button.active {
+  background-color: #8ce4ed;
+}
+.tabcontent {
+  float: center;
+  padding: 0px 12px;
+  width: 100%;
+  border-left: none;
+  height: 300px;
+  display: none;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+h1{
+  margin-top: 150px;
+  text-align: center;
+  font-family: "Arial Black", sans-serif;
+  font-size: 50px
+  }
+
+div {
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  font-size: 25px;
+  margin-bottom: 2%;
+}
+
+img {
+  position: center;
+  margin-top: 10%
+}
+
+
+p{
+  font-size: 15px;
+  margin-top: 5%
+}
+</style>
+
+</head>
+<body>
+
+<h1>Digestion Timer</h1>
+
+<div class="tab">
+  <button class="tablinks" onmouseover="openCity(event, 'Fast')">Fast Digestion</button>
+  <button class="tablinks" onmouseover="openCity(event, 'Slow')">Slow Digestion</button>
+  <button class="tablinks" onmouseover="openCity(event, 'Superslow')">Super Slow Digestion</button>
+</div>
+
+  <div id="Fast" class="tabcontent">
+    <img src="Fast.gif" alt="fast digesting food" width="1400" class="center">
+
+        <p id="clock"></p>
+        <div id="countdown"></div>
+        <script>
+          var timeleft = 100;
+          var downloadTimer = setInterval(function(){
+          document.getElementById("countdown").innerHTML = timeleft + " seconds remaining to digest!";
+          timeleft -= 1;
+          if(timeleft <= 0){
+          clearInterval(downloadTimer);
+          document.getElementById("countdown").innerHTML = "Digested!"
+             }
+        }, 1000);
+       </script> </div>
+
+
+
+    <div id="Slow" class="tabcontent">
+    <img src="Slow.gif" alt="slow digesting food" width="1400" class="center">
+  
+        <p id="clock2"></p>
+        <div id="countdown2"></div>
+        <script>
+          var timeleft = 2400;
+          var downloadTimer = setInterval(function(){
+          document.getElementById("countdown2").innerHTML = timeleft + " seconds remaining to digest!";
+          timeleft -= 1;
+          if(timeleft <= 0){
+          clearInterval(downloadTimer);
+          document.getElementById("countdown2").innerHTML = "Digested!"
+             }
+        }, 1000);
+       </script> 
+    </div>
+
+
+    <div id="Superslow" class="tabcontent">
+    <img src="Superslow.gif" alt="Super slow digesting food" width="1400" class="center">
+ 
+        <p id="clock3"></p>
+        <div id="countdown3"></div>
+        <script>
+          var timeleft = 7200;
+          var downloadTimer = setInterval(function(){
+          document.getElementById("countdown3").innerHTML = timeleft + " seconds remaining to digest!";
+          timeleft -= 1;
+          if(timeleft <= 0){
+          clearInterval(downloadTimer);
+          document.getElementById("countdown3").innerHTML = "Digested!"
+             }
+        }, 1000);
+       </script> 
+    </div>
+
+
+
+<div class="clearfix"></div>
+
+<script type="text/javascript">
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+
+   
+</body>
+</html> 
