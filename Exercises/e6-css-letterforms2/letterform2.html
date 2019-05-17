@@ -5,44 +5,61 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
+ 
     <style>
+    body {
+     background-color: #FFFF39;
+    }
+
+
     #a{
-    	position: absolute;
-    	top: 20rem;
-    	left: 20rem;
+        position: absolute;
+        top: 20rem;
+        left: 20rem;
     }
 
     .circle {
-    	height:300px;
-    	width: 300px;
-    	border-radius: 80%;
-    	background-color: skyblue;
+        height:300px;
+        width: 300px;
+        border-radius: 80%;
+        background-color: skyblue;
       transform: translateY(-70%) translateX(-50%);
 
     }
 
     .stroke-horizontal{
-    	width: 170px;
-    	height: 40px;
-    	background-color: skyblue;
-    	transform: translateX(-90%) translateY(-1273%);
+        width: 170px;
+        height: 40px;
+        background-color: skyblue;
+        transform: translateX(-90%) translateY(-1273%);
     }
+
 
     .stroke-vertical{
-    	width: 50px;
-    	height: 300px;
-    	background-color: orange;
-    	transform: translateX(299%) translateY(-180%);}
-
+    width: 50px;
+    height: 300px;
+    background-color: orange;
+    transform: translateX(299%) translateY(-180%);
+    animation-name: movee;
+    animation-duration: 10s; 
+    animation: movee 5s linear infinite;
+    animation-timing-function: linear;
+    animation-delay: 0s;
     }
 
+    @-webkit-keyframes movee {
+        0% {border-radius: 100%;}
+        15% {border-radius: 200px;}
+        100% {border-radius: 10px;}
+        }
+
     #A{
-      position: absolute;
-     
+    position: absolute;
+    
     }
 
     .stroke-horizontal1{
-    width: 212px;
+    width: 213px;
     height: 30px;
     background-color: skyblue;
     transform: translateX(0%) translateY(-2050%);}
@@ -100,6 +117,12 @@
     background-color: orange;
     border-radius: 50%;
     transform: skewX(-50deg) translateX(-350%) translateY(-650%);
+    -webkit-animation-name:move;
+    -webkit-animation-duration:2s;}
+
+    @-webkit-keyframes move{
+        from{background-color: orange;}
+        to{background-color: crimson;}
     }
 
     .stroke-vertical3{
@@ -107,7 +130,7 @@
     height: 150px;
     background-color: skyblue;
     transform: translateX(470%) translateY(-650%);
-    }
+   }
 
     #AAA{
       position: absolute;
@@ -119,6 +142,20 @@
       border-radius: 80%;
       background-color: skyblue;
       transform: translateY(-250%) translateX(-10%);
+      -webkit-animation-name: circlee;
+      -webkit-animation-duration: 10s;
+      animation-name: circlee;
+      animation-duration: 10s;
+    }
+
+    @-webkit-keyframes circlee{
+        from {background-color: skyblue;}
+        to {background-color: orange;}
+    }
+
+    @keyframes circlee{
+        from {background-color: skyblue;}
+        to {background-color: blue;}
     }
 
     .stroke-vertical4{
@@ -140,11 +177,11 @@
     </style>
    </head>
 
-   	<body>
-   		<div id="a">
-   			<div class="circle"></div>
-   			<div class="stroke-horizontal"></div>
-   			<div class="stroke-vertical"></div>
+    <body>
+        <div id="a">
+            <div class="circle"></div>
+            <div class="stroke-horizontal"></div>
+            <div class="stroke-vertical"></div>
 
       <div id="A">
         <div class="stroke-vertical1"></div>
@@ -170,6 +207,6 @@
 
 
 
-   		</div>
-   	</body>
+        </div>
+    </body>
    </html>
